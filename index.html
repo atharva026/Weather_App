@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+   
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+
+    <section id="main-box" class="w-full max-w-md p-5 rounded-2xl mx-2" style="background-color: rgba(255, 255, 255, 0.600); ">
+
+        <!-- Search Bar Start -->
+        <div class="search relative flex items-center h-14 bg-white rounded-lg border border-gray-300 shadow-sm">
+            <i class="fa-solid fa-location-dot absolute left-3 text-2xl text-gray-600" aria-label="Location Icon"></i>
+            <input type="text" placeholder="Enter your City" id="city"
+                class="w-full h-full pl-10 pr-10 bg-transparent text-center outline-none placeholder:text-lg text-gray-700"
+                aria-label="City Name">
+            <button class="fa-solid fa-magnifying-glass absolute right-3 text-2xl text-gray-600 bg-transparent"
+                aria-label="Search" role="button"></button>
+        </div>
+        <!-- Search Bar End -->
+
+        <!-- Weather Info Display Start -->
+        <div id="weather-info" class="mt-4 text-center text-gray-800 hidden">
+            <h2 id="city-country" class="text-2xl font-bold"></h2>
+            <img id="image" src="./static/images/snow.png" class="m-auto w-3/5">
+            <h1 id="temp" class="text-5xl leading-none font-bold mt-4"> <sup>°C</sup></h1>
+            <p id="description" class="text-2xl font-medium capitalize"></p>
+
+            <div class="flex justify-around mt-4 gap-5">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-water mr-2 text-5xl text-blue-500"></i>
+                    <div class="flex flex-col text-left">
+                        <p id="humidity" class="text-2xl">00 %</p>
+                        <span class="text-sm">Humidity</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-left">
+                    <i class="fa-solid fa-wind mr-2 text-5xl text-green-500"></i>
+                    <div class="flex flex-col">
+                        <p id="windspeed" class="text-2xl text-left">0.00 km/h</p>
+                        <span class="text-sm">Wind Speed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Weather Info Display End -->
+
+        <!-- City Not Found Start -->
+        <div id="not-found" class="hidden mt-2 p-5">
+            <img id="not-found-image" src="./static/images/404.png" alt="City Not Found">
+            <h3 class="text-2xl font-semibold text-center pt-5">Oops! City Not Found</h3>
+        </div>
+        <!-- City Not Found End -->
+
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
